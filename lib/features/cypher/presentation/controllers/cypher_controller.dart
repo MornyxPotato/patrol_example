@@ -62,12 +62,14 @@ class CypherController extends GetxController {
 
   void onClearInput1() {
     cypherInput1Ctl.clear();
-    update([CypherIds.cypherInput1]);
+    cypherResult = '';
+    update([CypherIds.cypherInput1, CypherIds.cypherResult]);
   }
 
   void onClearInput2() {
     cypherInput2Ctl.clear();
-    update([CypherIds.cypherInput2]);
+    cypherResult = '';
+    update([CypherIds.cypherInput2, CypherIds.cypherResult]);
   }
 
   void process() {

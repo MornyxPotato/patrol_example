@@ -25,6 +25,7 @@ class CypherResult extends StatelessWidget {
           const SizedBox(height: 8),
           Text(
             text,
+            key: const Key('CypherResult'),
             style: TextStyle(
               color: AppColors.accentPrimaryColor,
               fontSize: 20,

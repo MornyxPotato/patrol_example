@@ -31,6 +31,7 @@ class HomeScreen extends GetView<HomeController> {
               ),
               width: double.infinity,
               child: TextButton(
+                key: const Key('HomeCypherButton'),
                 onPressed: () {
                   controller.goToCypherScreen();
                 },

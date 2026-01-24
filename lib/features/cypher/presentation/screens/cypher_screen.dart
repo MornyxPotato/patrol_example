@@ -30,6 +30,7 @@ class CypherScreen extends GetView<CypherController> {
           FocusScope.of(context).unfocus();
         },
         child: Container(
+          key: const Key('CypherScreenBody'),
           color: Colors.transparent,
           child: Column(
             children: [
@@ -47,21 +48,25 @@ class CypherScreen extends GetView<CypherController> {
                       child: Row(
                         children: [
                           CypherRadioButton<CypherType>(
+                            key: const Key('CypherAtbashRadioButton'),
                             type: CypherType.atbash,
                             text: 'Atbash',
                             onTap: controller.onCypherSelected,
                           ),
                           CypherRadioButton<CypherType>(
+                            key: const Key('CypherA1Z26RadioButton'),
                             type: CypherType.a1z26,
                             text: 'A1Z26',
                             onTap: controller.onCypherSelected,
                           ),
                           CypherRadioButton<CypherType>(
+                            key: const Key('CypherCaesarRadioButton'),
                             type: CypherType.caesar,
                             text: 'Caesar',
                             onTap: controller.onCypherSelected,
                           ),
                           CypherRadioButton<CypherType>(
+                            key: const Key('CypherVigenereRadioButton'),
                             type: CypherType.vigenere,
                             text: 'Vigenere',
                             onTap: controller.onCypherSelected,
@@ -85,11 +90,13 @@ class CypherScreen extends GetView<CypherController> {
                     child: Row(
                       children: [
                         CypherRadioButton<CypherMode>(
+                          key: const Key('CypherModeEncryptRadioButton'),
                           type: CypherMode.encrypt,
                           text: 'Encrypt',
                           onTap: controller.onModeSelect,
                         ),
                         CypherRadioButton<CypherMode>(
+                          key: const Key('CypherModeDecryptRadioButton'),
                           type: CypherMode.decrypt,
                           text: 'Decrypt',
                           onTap: controller.onModeSelect,
@@ -112,10 +119,12 @@ class CypherScreen extends GetView<CypherController> {
                 id: CypherIds.cypherInput1,
                 builder: (ctl) {
                   return CypherInput(
+                    key: const Key('CypherInput1'),
                     textEditingController: controller.cypherInput1Ctl,
                     hintText: 'Enter text to ${controller.mode.value}...',
                     onChanged: controller.onInput1Changed,
                     onClear: controller.onClearInput1,
+                    clearButtonKey: const Key('CypherInput1ClearButton'),
                   );
                 },
               ),
@@ -125,10 +134,12 @@ class CypherScreen extends GetView<CypherController> {
                 builder: (ctl) {
                   if (controller.showInput2) {
                     return CypherInput(
+                      key: const Key('CypherInput2'),
                       textEditingController: controller.cypherInput2Ctl,
                       hintText: 'Enter Vigenere key...',
                       onChanged: controller.onInput2Changed,
                       onClear: controller.onClearInput2,
+                      clearButtonKey: const Key('CypherInput2ClearButton'),
                     );
                   }
                   return const SizedBox.shrink();

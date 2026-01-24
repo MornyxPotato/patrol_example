@@ -6,6 +6,7 @@ class CypherInput extends StatelessWidget {
   final String hintText;
   final Function(String) onChanged;
   final Function onClear;
+  final Key clearButtonKey;
 
   const CypherInput({
     super.key,
@@ -13,6 +14,7 @@ class CypherInput extends StatelessWidget {
     required this.hintText,
     required this.onChanged,
     required this.onClear,
+    required this.clearButtonKey,
   });
 
   @override
@@ -32,6 +34,7 @@ class CypherInput extends StatelessWidget {
                   },
                   child: Icon(
                     Icons.clear,
+                    key: clearButtonKey,
                     color: AppColors.secondaryTextColor,
                   ),
                 )

@@ -20,7 +20,7 @@ void main() {
 
       expect($('app'), findsOneWidget);
       if (!Platform.isMacOS) {
-        await $.native.pressHome();
+        await $.platformAutomator.mobile.pressHome();
       }
     },
   );

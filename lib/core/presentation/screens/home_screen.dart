@@ -45,6 +45,29 @@ class HomeScreen extends GetView<HomeController> {
               ),
             ),
           ),
+          Padding(
+            padding: const EdgeInsets.only(left: 16, right: 16, bottom: 16),
+            child: Container(
+              decoration: BoxDecoration(
+                color: AppColors.primaryColor,
+                borderRadius: BorderRadius.circular(16),
+              ),
+              width: double.infinity,
+              child: TextButton(
+                key: const Key('HomeClueButton'),
+                onPressed: () {
+                  controller.goToClueScreen();
+                },
+                child: Text(
+                  'Clue',
+                  style: TextStyle(
+                    fontSize: 16,
+                    color: AppColors.textOrIconColor,
+                  ),
+                ),
+              ),
+            ),
+          ),
         ],
       ),
     );

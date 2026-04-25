@@ -5,4 +5,8 @@ class HomeController extends GetxController {
   void goToCypherScreen() {
     Get.toNamed(Routes.cypher);
   }
+
+  void goToClueScreen() {
+    Get.toNamed(Routes.clue);
+  }
 }
